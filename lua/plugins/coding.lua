@@ -64,6 +64,11 @@ return {
     },
   },
 
+  {
+    "Exafunction/windsurf.vim",
+    event = "BufEnter",
+  },
+
   -- dial.nvim
   {
     "monaqa/dial.nvim",
