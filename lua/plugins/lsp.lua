@@ -132,7 +132,7 @@ return {
             },
           },
         },
-        --[[ html = {},
+        html = {},
         eslint = {},
         ts_ls = {
           init_options = {
@@ -141,7 +141,7 @@ return {
             },
           },
         },
-        cssls = {}, ]]
+        cssls = {},
       },
     },
     config = function(_, opts)
@@ -207,9 +207,9 @@ return {
         sh = { "shfmt" },
         zsh = { "shfmt" },
         markdown = { "prettierd" },
-        --[[ html = { "prettierd" },
+        html = { "prettierd" },
         javascript = { "prettierd" },
-        css = { "prettierd" }, ]]
+        css = { "prettierd" },
         json = { "prettierd" },
         toml = { "taplo" },
         --[[ cpp = { "clang-format" },
@@ -260,10 +260,10 @@ return {
         },
         zsh = { "zsh" },
         markdown = { "markdownlint" },
-        --[[ html = { "markuplint" },
+        html = { "markuplint" },
         css = { "stylelint" },
         cpp = { "cpplint" },
-        c = { "cpplint" }, ]]
+        c = { "cpplint" },
       }
 
       vim.api.nvim_create_autocmd({ "BufWritePost" }, {

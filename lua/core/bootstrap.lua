@@ -53,23 +53,23 @@ require("lazy").setup({
   },
 })
 
-require("lspconfig").ts_ls.setup({
-  cmd = { "typescript-language-server", "--stdio" },
-  filetypes = {
-    "typescript",
-    "typescriptreact",
-    "typescript.tsx",
-    "javascript",
-    "javascriptreact",
-  },
-  root_dir = require("lspconfig.util").root_pattern(
-    "tsconfig.json",
-    "package.json",
-    ".git"
-  ),
-  init_options = {
-    preferences = {
-      disableSuggestions = true,
-    },
-  },
-})
+-- require("lspconfig").ts_ls.setup({
+--   cmd = { "typescript-language-server", "--stdio" },
+--   filetypes = {
+--     "typescript",
+--     "typescriptreact",
+--     "typescript.tsx",
+--     "javascript",
+--     "javascriptreact",
+--   },
+--   root_dir = require("lspconfig.util").root_pattern(
+--     "tsconfig.json",
+--     "package.json",
+--     ".git"
+--   ),
+--   init_options = {
+--     preferences = {
+--       disableSuggestions = true,
+--     },
+--   },
+-- })

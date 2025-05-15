@@ -275,6 +275,13 @@ return {
     },
   },
 
+  {
+    "windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true,
+    opts = {},
+  },
+
   -- flit.nvim
   {
     "ggandor/flit.nvim",
