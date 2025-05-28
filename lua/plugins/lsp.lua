@@ -106,6 +106,18 @@ return {
             clangdFileStatus = true,
           },
         }, ]]
+        pyright = {
+          settings = {
+            python = {
+              analysis = {
+                typeCheckingMode = "basic",
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = true,
+                diagnosticMode = "workspace",
+              },
+            },
+          },
+        },
         lua_ls = {
           log_level = 0,
           settings = {
@@ -122,26 +134,238 @@ return {
             },
           },
         },
+        gopls = {
+          settings = {
+            gopls = {
+              analyses = {
+                unusedparams = true,
+                unreachable = true,
+                fillstruct = true,
+                undeclaredname = true,
+              },
+              staticcheck = true,
+              gofumpt = true,
+              codelenses = {
+                gc_details = false,
+                generate = true,
+                regenerate_cgo = true,
+                run_govulncheck = true,
+                test = true,
+                tidy = true,
+                upgrade_dependency = true,
+                vendor = true,
+              },
+              hints = {
+                assignVariableTypes = true,
+                compositeLiteralFields = true,
+                compositeLiteralTypes = true,
+                constantValues = true,
+                functionTypeParameters = true,
+                parameterNames = true,
+                rangeVariableTypes = true,
+              },
+              buildFlags = { "-tags", "integration" },
+              env = {
+                GOFLAGS = "-tags=integration",
+              },
+              directoryFilters = {
+                "-.git",
+                "-.vscode",
+                "-.idea",
+                "-.vscode-test",
+                "-node_modules",
+              },
+              semanticTokens = true,
+            },
+          },
+        },
         marksman = {},
         bashls = { filetypes = { "sh", "zsh", "bash" } },
         taplo = {},
         tsserver = {
           init_options = {
             preferences = {
-              disableSuggestions = true,
+              disableSuggestions = false,
+              includeCompletionsForModuleExports = true,
+              includeCompletionsWithSnippetText = true,
+              includeCompletionsForImportStatements = true,
+              includeAutomaticOptionalChainCompletions = true,
+            },
+          },
+          settings = {
+            typescript = {
+              inlayHints = {
+                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayEnumMemberValueHints = true,
+              },
+              suggest = {
+                includeCompletionsForModuleExports = true,
+                includeAutomaticOptionalChainCompletions = true,
+              },
+            },
+            javascript = {
+              inlayHints = {
+                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayEnumMemberValueHints = true,
+              },
+              suggest = {
+                includeCompletionsForModuleExports = true,
+                includeAutomaticOptionalChainCompletions = true,
+              },
             },
           },
         },
         html = {},
+        emmet_ls = {
+          filetypes = {
+            "html",
+            "css",
+            "scss",
+            "sass",
+            "less",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "jsx",
+            "tsx",
+            "vue",
+            "svelte",
+          },
+          init_options = {
+            html = {
+              options = {
+                ["bem.enabled"] = true,
+              },
+            },
+            jsx = {
+              options = {
+                ["jsx.enabled"] = true,
+              },
+            },
+          },
+        },
         eslint = {},
         ts_ls = {
           init_options = {
             preferences = {
-              disableSuggestions = true,
+              disableSuggestions = false,
+              includeCompletionsForModuleExports = true,
+              includeCompletionsWithSnippetText = true,
+              includeCompletionsForImportStatements = true,
+              includeAutomaticOptionalChainCompletions = true,
+            },
+          },
+          settings = {
+            typescript = {
+              inlayHints = {
+                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayEnumMemberValueHints = true,
+              },
+              suggest = {
+                includeCompletionsForModuleExports = true,
+                includeAutomaticOptionalChainCompletions = true,
+              },
+            },
+            javascript = {
+              inlayHints = {
+                includeInlayParameterNameHints = "all",
+                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+                includeInlayFunctionParameterTypeHints = true,
+                includeInlayVariableTypeHints = true,
+                includeInlayPropertyDeclarationTypeHints = true,
+                includeInlayFunctionLikeReturnTypeHints = true,
+                includeInlayEnumMemberValueHints = true,
+              },
+              suggest = {
+                includeCompletionsForModuleExports = true,
+                includeAutomaticOptionalChainCompletions = true,
+              },
             },
           },
         },
         cssls = {},
+        nil_ls = {
+          settings = {
+            ["nil"] = {
+              formatting = {
+                command = { "nixpkgs-fmt" },
+              },
+              diagnostics = {
+                ignored = {},
+                excludedFiles = {},
+              },
+              nix = {
+                flake = {
+                  autoArchive = false,
+                  autoEvalInputs = false,
+                },
+                enableCompletion = true,
+                nixpkgs = {
+                  enable = true,
+                  fetchTarball = {
+                    url = "https://github.com/NixOS/nixpkgs/archive/nixpkgs-unstable.tar.gz",
+                  },
+                },
+              },
+            },
+          },
+        },
+        tailwindcss = {
+          filetypes = {
+            "html",
+            "css",
+            "scss",
+            "javascript",
+            "javascriptreact",
+            "typescript",
+            "typescriptreact",
+            "jsx",
+            "tsx",
+            "svelte",
+            "vue",
+          },
+          init_options = {
+            userLanguages = {
+              typescript = "javascript",
+              typescriptreact = "javascriptreact",
+            },
+          },
+          settings = {
+            tailwindCSS = {
+              experimental = {
+                classRegex = {
+                  "className\\s*=\\s*[\"']([^\"']*)[\"']",
+                  "class\\s*=\\s*[\"']([^\"']*)[\"']",
+                  "tw\\s*`([^`]*)`",
+                  "tw\\s*\\([\"']([^)]*)[\"']\\)",
+                  "tw\\s*\\(\\s*`([^`]*)`\\s*\\)",
+                  "\\bcn\\(\\s*[`'\"]([^)]*)['`\"]",
+                },
+              },
+              includeLanguages = {
+                typescript = "javascript",
+                typescriptreact = "javascriptreact",
+              },
+              validate = true,
+            },
+          },
+        },
       },
     },
     config = function(_, opts)

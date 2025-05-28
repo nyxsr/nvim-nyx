@@ -1,4 +1,10 @@
 return {
+  {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = { "MunifTanjim/nui.nvim" },
+    opts = {},
+  },
   -- Comment.nvim
   {
     "numToStr/Comment.nvim",
@@ -6,7 +12,45 @@ return {
       { "gc", mode = { "n", "v" }, desc = "Toggle comments" },
       { "gb", mode = { "n", "v" }, desc = "Toggle block comments" },
     },
-    config = true,
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
+    config = function()
+      require("Comment").setup({
+        -- Pre-hook function for determining the commenting style
+        pre_hook = require(
+          "ts_context_commentstring.integrations.comment_nvim"
+        ).create_pre_hook(),
+
+        -- Including all required fields with their default values
+        padding = true,
+        sticky = true,
+        ignore = "^$", -- Use empty string regex pattern instead of nil
+        toggler = {
+          line = "gcc",
+          block = "gbc",
+        },
+        opleader = {
+          line = "gc",
+          block = "gb",
+        },
+        mappings = {
+          basic = true,
+          extra = true,
+        },
+        extra = {
+          above = "gcO",
+          below = "gco",
+          eol = "gcA",
+        },
+        post_hook = function() end, -- Empty function instead of nil
+      })
+
+      -- Configure ts_context_commentstring
+      require("ts_context_commentstring").setup({
+        enable_autocmd = false,
+      })
+    end,
   },
   {
     "yetone/avante.nvim",
