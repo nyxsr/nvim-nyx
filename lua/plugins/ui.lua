@@ -296,6 +296,11 @@ return {
         end,
         desc = "Jump to last buffer",
       },
+      {
+        "<leader>bn",
+        "<cmd>enew<CR>",
+        desc = "Create new buffer",
+      },
     },
     opts = {
       options = {

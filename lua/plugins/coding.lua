@@ -1,4 +1,5 @@
 return {
+  { "vuciv/golf" },
   {
     "m4xshen/hardtime.nvim",
     lazy = false,
@@ -299,7 +300,10 @@ return {
   {
     "saghen/blink.cmp",
     event = "InsertEnter",
-    dependencies = "rafamadriz/friendly-snippets",
+    dependencies = {
+      "moyiz/blink-emoji.nvim",
+      "rafamadriz/friendly-snippets",
+    },
     version = "1.*",
     ---@module "blink.cmp"
     ---@type blink.cmp.Config
@@ -344,6 +348,7 @@ return {
         accept = { auto_brackets = { enabled = true } },
         keyword = { range = "full" },
         ghost_text = { enabled = true },
+        documentation = { auto_show = true },
         menu = {
           draw = {
             columns = {
@@ -367,6 +372,13 @@ return {
             name = "LazyDev",
             module = "lazydev.integrations.blink",
             score_offset = 100,
+          },
+          emoji = {
+            module = "blink-emoji",
+            name = "Emoji",
+            score_offset = 93, -- the higher the number, the higher the priority
+            min_keyword_length = 2,
+            opts = { insert = true }, -- Insert emoji (default) or complete its name
           },
         },
       },

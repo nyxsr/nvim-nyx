@@ -182,49 +182,49 @@ return {
         marksman = {},
         bashls = { filetypes = { "sh", "zsh", "bash" } },
         taplo = {},
-        tsserver = {
-          init_options = {
-            preferences = {
-              disableSuggestions = false,
-              includeCompletionsForModuleExports = true,
-              includeCompletionsWithSnippetText = true,
-              includeCompletionsForImportStatements = true,
-              includeAutomaticOptionalChainCompletions = true,
-            },
-          },
-          settings = {
-            typescript = {
-              inlayHints = {
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-              },
-              suggest = {
-                includeCompletionsForModuleExports = true,
-                includeAutomaticOptionalChainCompletions = true,
-              },
-            },
-            javascript = {
-              inlayHints = {
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-              },
-              suggest = {
-                includeCompletionsForModuleExports = true,
-                includeAutomaticOptionalChainCompletions = true,
-              },
-            },
-          },
-        },
+        -- tsserver = {
+        --   init_options = {
+        --     preferences = {
+        --       disableSuggestions = false,
+        --       includeCompletionsForModuleExports = true,
+        --       includeCompletionsWithSnippetText = true,
+        --       includeCompletionsForImportStatements = true,
+        --       includeAutomaticOptionalChainCompletions = true,
+        --     },
+        --   },
+        --   settings = {
+        --     typescript = {
+        --       inlayHints = {
+        --         includeInlayParameterNameHints = "all",
+        --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        --         includeInlayFunctionParameterTypeHints = true,
+        --         includeInlayVariableTypeHints = true,
+        --         includeInlayPropertyDeclarationTypeHints = true,
+        --         includeInlayFunctionLikeReturnTypeHints = true,
+        --         includeInlayEnumMemberValueHints = true,
+        --       },
+        --       suggest = {
+        --         includeCompletionsForModuleExports = true,
+        --         includeAutomaticOptionalChainCompletions = true,
+        --       },
+        --     },
+        --     javascript = {
+        --       inlayHints = {
+        --         includeInlayParameterNameHints = "all",
+        --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        --         includeInlayFunctionParameterTypeHints = true,
+        --         includeInlayVariableTypeHints = true,
+        --         includeInlayPropertyDeclarationTypeHints = true,
+        --         includeInlayFunctionLikeReturnTypeHints = true,
+        --         includeInlayEnumMemberValueHints = true,
+        --       },
+        --       suggest = {
+        --         includeCompletionsForModuleExports = true,
+        --         includeAutomaticOptionalChainCompletions = true,
+        --       },
+        --     },
+        --   },
+        -- },
         html = {},
         emmet_ls = {
           filetypes = {
@@ -256,48 +256,159 @@ return {
           },
         },
         eslint = {},
-        ts_ls = {
-          init_options = {
-            preferences = {
-              disableSuggestions = false,
-              includeCompletionsForModuleExports = true,
-              includeCompletionsWithSnippetText = true,
-              includeCompletionsForImportStatements = true,
-              includeAutomaticOptionalChainCompletions = true,
-            },
-          },
+        -- ts_ls = {
+        --   init_options = {
+        --     preferences = {
+        --       disableSuggestions = false,
+        --       includeCompletionsForModuleExports = true,
+        --       includeCompletionsWithSnippetText = true,
+        --       includeCompletionsForImportStatements = true,
+        --       includeAutomaticOptionalChainCompletions = true,
+        --     },
+        --   },
+        --   settings = {
+        --     typescript = {
+        --       inlayHints = {
+        --         includeInlayParameterNameHints = "all",
+        --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        --         includeInlayFunctionParameterTypeHints = true,
+        --         includeInlayVariableTypeHints = true,
+        --         includeInlayPropertyDeclarationTypeHints = true,
+        --         includeInlayFunctionLikeReturnTypeHints = true,
+        --         includeInlayEnumMemberValueHints = true,
+        --       },
+        --       suggest = {
+        --         includeCompletionsForModuleExports = true,
+        --         includeAutomaticOptionalChainCompletions = true,
+        --       },
+        --     },
+        --     javascript = {
+        --       inlayHints = {
+        --         includeInlayParameterNameHints = "all",
+        --         includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+        --         includeInlayFunctionParameterTypeHints = true,
+        --         includeInlayVariableTypeHints = true,
+        --         includeInlayPropertyDeclarationTypeHints = true,
+        --         includeInlayFunctionLikeReturnTypeHints = true,
+        --         includeInlayEnumMemberValueHints = true,
+        --       },
+        --       suggest = {
+        --         includeCompletionsForModuleExports = true,
+        --         includeAutomaticOptionalChainCompletions = true,
+        --       },
+        --     },
+        --   },
+        vtsls = {
           settings = {
-            typescript = {
-              inlayHints = {
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
+            complete_function_calls = true,
+            vtsls = {
+              enableMoveToFileCodeAction = true,
+              autoUseWorkspaceTsdk = true,
+              experimental = {
+                completion = {
+                  enableServerSideFuzzyMatch = true,
+                },
               },
+            },
+            typescript = {
+              updateImportsOnFileMove = { enabled = "always" },
               suggest = {
+                completeFunctionCalls = true,
                 includeCompletionsForModuleExports = true,
+                includeAutomaticOptionalChainCompletions = true,
+              },
+              inlayHints = {
+                enumMemberValues = { enabled = true },
+                functionLikeReturnTypes = { enabled = true },
+                parameterNames = { enabled = "all" },
+                parameterTypes = { enabled = true },
+                propertyDeclarationTypes = { enabled = true },
+                variableTypes = { enabled = true },
+              },
+              preferences = {
+                disableSuggestions = false,
+                includeCompletionsForModuleExports = true,
+                includeCompletionsWithSnippetText = true,
+                includeCompletionsForImportStatements = true,
                 includeAutomaticOptionalChainCompletions = true,
               },
             },
             javascript = {
-              inlayHints = {
-                includeInlayParameterNameHints = "all",
-                includeInlayParameterNameHintsWhenArgumentMatchesName = false,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-              },
+              updateImportsOnFileMove = { enabled = "always" },
               suggest = {
+                completeFunctionCalls = true,
                 includeCompletionsForModuleExports = true,
                 includeAutomaticOptionalChainCompletions = true,
               },
+              inlayHints = {
+                enumMemberValues = { enabled = true },
+                functionLikeReturnTypes = { enabled = true },
+                parameterNames = { enabled = "all" },
+                parameterTypes = { enabled = true },
+                propertyDeclarationTypes = { enabled = true },
+                variableTypes = { enabled = true },
+              },
             },
           },
+        }, -- },
+        svelte = {
+          settings = {
+            svelte = {
+              plugin = {
+                html = {
+                  completions = {
+                    enable = true,
+                    emmet = true,
+                  },
+                },
+                svelte = {
+                  completions = {
+                    enable = true,
+                  },
+                  diagnostics = {
+                    enable = true,
+                  },
+                  hover = {
+                    enable = true,
+                  },
+                  codeActions = {
+                    enable = true,
+                  },
+                },
+                css = {
+                  completions = {
+                    enable = true,
+                    emmet = true,
+                  },
+                  hover = {
+                    enable = true,
+                  },
+                  diagnostics = {
+                    enable = true,
+                  },
+                },
+                typescript = {
+                  enable = true,
+                  diagnostics = {
+                    enable = true,
+                  },
+                  hover = {
+                    enable = true,
+                  },
+                  completions = {
+                    enable = true,
+                  },
+                  codeActions = {
+                    enable = true,
+                  },
+                  rename = {
+                    enable = true,
+                  },
+                },
+              },
+            },
+          },
+          filetypes = { "svelte" },
         },
         cssls = {},
         nil_ls = {
