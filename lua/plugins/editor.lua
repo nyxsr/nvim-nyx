@@ -1,4 +1,24 @@
 return {
+  {
+    "saecki/crates.nvim",
+    ft = { "toml" },
+    config = function()
+      require("crates").setup({
+        completion = {
+          crates = {
+            enabled = true,
+            max_results = 8,
+            min_chars = 3,
+          },
+        },
+      })
+    end,
+  },
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^6", -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
   -- todo-comments.nvim
   {
     "folke/todo-comments.nvim",
@@ -97,6 +117,20 @@ return {
       hl(0, "MultiCursorDisabledCursor", { reverse = true })
       hl(0, "MultiCursorDisabledVisual", { link = "Visual" })
       hl(0, "MultiCursorDisabledSign", { link = "SignColumn" })
+    end,
+  },
+
+  { "romainl/vim-cool", keys = { "/", "?", "*", "#", "g*", "g#", "n", "N" } },
+  {
+    "ggandor/flit.nvim",
+    dependencies = "ggandor/leap.nvim",
+    opts = { labeled_modes = "nx" },
+    keys = function()
+      local ret = {}
+      for _, key in ipairs({ "f", "F", "t", "T" }) do
+        ret[#ret + 1] = { key, mode = { "n", "x", "o" }, desc = key }
+      end
+      return ret
     end,
   },
 
